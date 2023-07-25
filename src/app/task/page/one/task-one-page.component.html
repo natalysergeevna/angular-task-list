@@ -1,0 +1,5 @@
+<div class="container">
+  <ng-container *ngIf="task$ | async as task">
+    <task-item [task]="task" [isView]="true"></task-item>
+  </ng-container>
+</div>

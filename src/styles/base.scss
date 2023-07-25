@@ -1,0 +1,22 @@
+body {
+  font-family: 'Muller', sans-serif;
+  font-size: 16px;
+}
+.mdc-dialog__content {
+  padding: 60px !important;
+}
+.mat-mdc-dialog-container {
+  .mat-mdc-dialog-title {
+    font-size: 40px !important;
+    font-weight: bold !important;
+    padding: 60px 60px 0px !important;
+  }
+  .mdc-dialog__surface {
+    border-radius: 24px !important;
+  }
+}
+.mdc-line-ripple {
+  &::before, &::after {
+    border: none !important;
+  }
+}

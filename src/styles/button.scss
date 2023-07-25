@@ -1,0 +1,55 @@
+.mdc-button {
+  &.mat-mdc-button-base {
+    &:not(.mat-mdc-icon-button) { 
+      &:not(.mat-calendar-period-button) {
+        height: 64px;
+        border-radius: 64px;
+        padding: 0px 80px;
+        font-size: 24px;
+        font-weight: 300;
+        &.mat-mdc-raised-button {        
+          &.mat-primary {
+            background: linear-gradient(279deg, #00aa13, #97d700 80%);
+            color: #fff;
+          }
+        }
+        &.mat-mdc-outlined-button {
+          border: 1px solid #adadad;
+          color: #adadad;
+          &:hover {
+            border-color: #ff7500;
+            color: #ff7500;
+          }
+          .mat-ripple-element {
+            background-color: #ff7500 !important;
+            opacity: 0.1;
+          }
+          .mat-mdc-button-persistent-ripple {
+            &::before {
+              background-color: transparent !important;
+            }    
+          }
+        }
+      }
+    }   
+  }
+}
+.mdc-icon-button {
+  &.mat-mdc-icon-button {
+    color: #e0004d;
+    &.mat-primary { 
+      &.mat-icon{      
+        fill: #e0004d;
+      }
+    }
+  }
+  .mat-ripple-element {
+    background-color: #e0004d !important;
+    opacity: 0.1;
+  }
+  .mat-mdc-button-persistent-ripple {
+    &::before {
+      background-color: #e0004d !important;
+    }
+  }
+}

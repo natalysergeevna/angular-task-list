@@ -1,0 +1,30 @@
+.mdc-text-field--filled {
+  &:not(.mdc-text-field--disabled) {
+    background-color: transparent !important;
+  }
+}
+.mat-mdc-form-field-subscript-wrapper {
+  &::before {
+    height: 0px !important;
+  }
+}
+.mat-mdc-form-field-focus-overlay { 
+  background-color: transparent !important;  
+}
+.mdc-text-field--focused {
+  &:not(.mdc-text-field--disabled) {
+    .mdc-floating-label, .mat-datepicker-toggle-active {
+      color: #ff7500 !important;
+    }
+  }
+}
+.mat-mdc-form-field {
+  &:hover {
+    .mat-icon{
+      fill: #ff7500 !important;
+    }
+    .mdc-icon-button {
+      color: #ff7500 !important;
+    }
+  }
+}

@@ -1,0 +1,18 @@
+<mat-card [ngClass]="{ 'task-item-warning': isWarning, 'task-item-overdue': isOverdue}">
+  <mat-card-title>{{ task.name }}</mat-card-title>
+  <mat-card-content>
+    <div class="task-deadline"><span>Срок:</span>{{ task.deadline + '000' | date: 'dd MMMM yyyy' : '' : 'ru' }}</div>
+    <div class="task-descr" *ngIf="isView">{{ task.descr }}</div>
+    <div *ngIf="!isView">
+      <a mat-stroked-button color="primary" [routerLink]="['task', task.id]">Подробнее</a>
+    </div>
+  </mat-card-content>
+  <mat-card-actions *ngIf="!isView">
+    <div>
+      <button mat-icon-button color="primary" (click)="changeTask()"><mat-icon>edit</mat-icon></button>
+    </div>    
+    <div>
+      <button mat-icon-button color="primary" (click)="deleteTask()"><mat-icon>delete</mat-icon></button>
+    </div>
+  </mat-card-actions>
+</mat-card>

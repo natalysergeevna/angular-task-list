@@ -1,0 +1,28 @@
+<form [formGroup]="ownerForm" (ngSubmit)="onSave()">
+  <h2 mat-dialog-title>{{ data.isCreated ? 'Создание новой задачи' : 'Редактирование задачи'}}</h2>
+  <div mat-dialog-content>      
+    <mat-form-field>
+      <mat-label>Название</mat-label>
+      <input matInput required formControlName="name" [errorStateMatcher]="matcher">
+      <mat-error *ngIf="getError(ownerForm.controls.name)">Обязательное для заполнения</mat-error>
+    </mat-form-field>  
+    <mat-form-field>
+      <mat-label>Срок</mat-label>
+      <input matInput [matDatepicker]="picker" [errorStateMatcher]="matcher" formControlName="deadline" required (keydown)="keyDownDedline($event)">
+      <mat-error *ngIf="getError(ownerForm.controls.deadline)">Обязательное для заполнения</mat-error>
+      <mat-datepicker-toggle matIconSuffix [for]="picker">
+        <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+      </mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>      
+    </mat-form-field>  
+    <mat-form-field>
+      <mat-label>Описание</mat-label>
+      <textarea matInput formControlName="descr"></textarea>
+    </mat-form-field>
+  <div mat-dialog-actions>
+    <button mat-raised-button color="primary" type="submit" cdkFocusInitial>{{ data.isCreated ? 'Добавить' : 'Сохранить' }}</button>
+    <button mat-stroked-button (click)="onCancel()">Отменить</button>  
+  </div>
+  </div>
+</form>
+

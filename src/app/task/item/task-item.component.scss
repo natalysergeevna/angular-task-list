@@ -1,0 +1,44 @@
+.mat-mdc-card {
+  margin-bottom: 24px;
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: 8px 8px 16px 0 rgba(173, 173, 173, 0.24), 0 0 16px 0 rgba(173, 173, 173, 0.24);
+  &.task-item-warning {
+    border: 2px solid #ff7500;
+  }
+  &.task-item-overdue {
+    border: 2px solid #dc0533;
+  }
+  cursor: move;
+  .mat-mdc-card-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 24px 16px 12px;
+  }
+  .mat-mdc-card-content {
+    div {
+      margin: 20px 0px;
+    }
+    .task-deadline {
+      span {
+        font-weight: 700;
+        margin-right: 12px;
+      }
+    }
+    .task-descr {
+      font-size: 20px;
+    }
+    .mdc-button {
+      margin-top: 16px;
+    }
+  }
+  .mat-mdc-card-actions {
+    display: flex;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  a {
+    text-decoration: none;
+  }
+}

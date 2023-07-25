@@ -1,0 +1,8 @@
+<div class="task-list">
+  <h1>Менеджер задач</h1>
+  <button mat-raised-button color="primary" (click)="addTask()">Добавить задачу</button>
+  <div cdkDropList (cdkDropListDropped)="drop($event)">
+    <task-item *ngFor="let item of tasks" [task]="item" (onDeleted)="deleteTask($event)" cdkDrag></task-item>
+  </div>
+</div>
+
