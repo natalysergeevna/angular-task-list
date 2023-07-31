@@ -1,7 +1,6 @@
 import { createReducer, on } from '@ngrx/store';
-import { tasks } from './task.actions';
 import { ItemsFeatureState } from './task.selectors';
-import { TaskPageActions } from './task-page.actions';
+import { TaskPageActions } from './task.actions';
 import { Task } from '../model/task.model';
 
 export const initialState: ItemsFeatureState = {
@@ -11,7 +10,7 @@ export const initialState: ItemsFeatureState = {
 
 export const taskReducer = createReducer(
   initialState,
-  on(tasks, (store, result) => {
+  on(TaskPageActions['[ItemsAPI]ItemsLoaded'], (store, result) => {
     return {
       ...store,
       items: result.data,

@@ -1,4 +1,4 @@
-import { Component, Output } from '@angular/core';
+import { Component } from '@angular/core';
 
 import { Store } from '@ngrx/store';
 
@@ -7,7 +7,7 @@ import { TaskModalComponent } from 'src/app/task/modal/task-modal.component';
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { Task } from '../../model/task.model';
 import { ItemsFeatureState, selectItems } from '../../store/task.selectors';
-import { TaskPageActions } from '../../store/task-page.actions';
+import { TaskPageActions } from '../../store/task.actions';
 
 @Component({
   selector: 'app-home',

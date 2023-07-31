@@ -7,7 +7,7 @@ import {
   ItemsFeatureState,
   selectCurrentItem,
 } from '../../store/task.selectors';
-import { TaskPageActions } from '../../store/task-page.actions';
+import { TaskPageActions } from '../../store/task.actions';
 
 @Component({
   selector: 'app-task',

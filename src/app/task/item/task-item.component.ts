@@ -2,23 +2,22 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { TaskModalComponent } from '../modal/task-modal.component';
 import { Task } from '../model/task.model';
-import { TaskPageActions } from '../store/task-page.actions';
+import { TaskPageActions } from '../store/task.actions';
 import { Store } from '@ngrx/store';
 import { ItemsFeatureState } from '../store/task.selectors';
 
 @Component({
-  selector: 'task-item',
+  selector: 'app-task-item',
   templateUrl: './task-item.component.html',
   styleUrls: ['./task-item.component.scss'],
 })
 export class TaskItemComponent implements OnInit {
   @Input() task: Task;
-  @Input() isView: boolean = false;
-  @Output() onDeleted = new EventEmitter<Task>();
-  @Output() onChanged = new EventEmitter<Task>();
+  @Input() isView = false;
+  @Output() deleted = new EventEmitter<Task>();
 
-  isOverdue: boolean = false;
-  isWarning: boolean = false;
+  isOverdue = false;
+  isWarning = false;
 
   constructor(
     public dialog: MatDialog,
@@ -49,6 +48,6 @@ export class TaskItemComponent implements OnInit {
   }
   /**Удалить задачу их списка задач */
   deleteTask() {
-    this.onDeleted.emit(this.task);
+    this.deleted.emit(this.task);
   }
 }

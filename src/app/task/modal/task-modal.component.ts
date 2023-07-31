@@ -51,7 +51,7 @@ type DialogData = {
 };
 
 @Component({
-  selector: 'modal',
+  selector: 'app-modal',
   templateUrl: './task-modal.component.html',
   styleUrls: ['./task-model.component.scss'],
   standalone: true,
@@ -80,7 +80,7 @@ export class TaskModalComponent implements OnInit {
   public ownerForm: FormGroup<TaskForm>;
   matcher = new MyErrorStateMatcher();
 
-  submitted: boolean = false;
+  submitted = false;
 
   constructor(
     public dialogRef: MatDialogRef<TaskModalComponent>,
