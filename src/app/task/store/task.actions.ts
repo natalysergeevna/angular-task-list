@@ -12,5 +12,6 @@ export const TaskPageActions = createActionGroup({
     'Delete Item': props<{ item: Task }>(),
     'Get Item': props<{ id: number }>(),
     'Update Item': props<{ item: Task }>(),
+    'Change order': props<{ items: Task[] }>(),
   },
 });

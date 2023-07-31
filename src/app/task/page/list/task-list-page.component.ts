@@ -58,6 +58,6 @@ export class TaskPageComponent {
   drop(event: CdkDragDrop<Task[]>) {
     const tasksForDrop = [...this.tasks];
     moveItemInArray(tasksForDrop, event.previousIndex, event.currentIndex);
-    this.tasks = [...tasksForDrop];
+    this.store.dispatch(TaskPageActions.changeOrder({ items: tasksForDrop }));
   }
 }

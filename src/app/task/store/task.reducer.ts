@@ -46,5 +46,11 @@ export const taskReducer = createReducer(
         return item.id === props.item.id ? props.item : item;
       }),
     };
+  }),
+  on(TaskPageActions.changeOrder, (store: ItemsFeatureState, props) => {
+    return {
+      ...store,
+      items: props.items,
+    };
   })
 );
